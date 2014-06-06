@@ -1,60 +1,153 @@
-// bower:scss
-// endbower
+// // bower:scss
+// // endbower
 
 body {
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.left-container {
+    float: left;
+    width: 45%;
+    height: 1500px;
+    margin-top: 4px;
+    margin-left: 7px;
+    margin-right: 0px;
 }
 
 .detail-container {
-    width: 442px;
-    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
 }
 
-.thumbnails-container {
-    vertical-align: top;
-    display: inline-block;
+.image-container img {
+    margin-top: 3px;
 }
 
-.detail-view {
-    border: 1px solid #acacac;
-    width: 400px;
-    min-height: 400px;
-    padding: 20px;
-
-    img {
-        width: 100%;
-    }
-
-    .save-button {
-        background: pink;
-        color: white;
-        border: 1px solid red;
-        font-size: 20px;
-        box-shadow: inset 0 0 0 1px white;
-        cursor: pointer;
-        padding: 10px 30px;
-        display: inline-block;
-    }
-
-    .new-button {
-        background: purple;
-        color: white;
-        border: 1px solid green;
-        font-size: 20px;
-        box-shadow: inset 0 0 0 1px white;
-        cursor: pointer;
-        padding: 10px 30px;
-        display: inline-block;
-    }
+.add-image-input {
+    padding: 0px;
+    margin: 0 auto;
 }
 
+.input-text {
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.right-container {
+    float: right;
+    width: 54%; 
+    height: 1500px;
+    display: inline;
+    margin-top: 4px;
+}
 
 .thumbnail {
-    width: 200px;
+    display: inline;
+}
 
-    img {
-        width: 100%;
+.button {
+    display: inline-block;
+    cursor: pointer;
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    padding: 3px 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-family: Helvetica, Arial, Sans-Serif;
+    text-decoration: none;
+    vertical-align: middle;
+   
+
+    &:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    }
+
+    &:active {
+    position: relative;
+    border-top-color: #0e354d;
+    background: #0e354d;
     }
 }
+
+// body {
+//     background: #fafafa;
+//     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+//     color: #333;
+// }
+
+// .detail-container {
+//     width: 900px;
+//     display: inline-block;
+// }
+
+// .thumbnails-container {
+//     vertical-align: top;
+//     display: inline-block;
+// }
+
+// .detail-view {
+//     border: 1px solid #acacac;
+//     width: 400px;
+//     min-height: 400px;
+//     padding: 20px;
+
+//     img {
+//         width: 100%;
+//     }
+
+//     .save-button {
+//         background: pink;
+//         color: white;
+//         border: 1px solid red;
+//         font-size: 20px;
+//         box-shadow: inset 0 0 0 1px white;
+//         cursor: pointer;
+//         padding: 10px 30px;
+//         display: inline-block;
+//     }
+
+//     .new-button {
+//         background: purple;
+//         color: white;
+//         border: 1px solid green;
+//         font-size: 20px;
+//         box-shadow: inset 0 0 0 1px white;
+//         cursor: pointer;
+//         padding: 10px 30px;
+//         display: inline-block;
+//     }
+// }
+
+
+// .thumbnail {
+//     width: 200px;
+
+//     img {
+//         width: 100%;
+//     }
+// }

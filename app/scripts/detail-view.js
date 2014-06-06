@@ -1,27 +1,33 @@
 "use strict";
 
+// DetailView works like the thumbnailview 
+//// This is a constructor and the view is how we display our views in different ways
 var DetailView = Backbone.View.extend({
-
+  // className designates a class
   className: 'detail-view',
-
+  // This script is linking to the script tag in html 
   template: _.template($('.detail-view-template').text()),
-
+  // This event click is referencing a fuction. saying once clicked run the function 
+  // click the save button and it updates the model
+  // click to the new button and it adds the photo to the gallery
   events: {
     "click .save-button": "updateModel",
     "click .new-button": "createPhoto"
   },
 
+  // This initialize is appending to the detail-container. it is then being rendered. 
   initialize: function(){
     this.listenTo(photos, 'add', function(photo){
       new ThumbnailView({model: photo})
     })
-
+    // .listenTo is binded to models and collections
     this.listenTo(this.model, 'change', this.render);
 
     $('.detail-container').append(this.el);
     this.render();
   },
 
+  // This is the render function. The renderedTemplate becomes a template
   render: function(){
 
     var renderedTemplate = this.template(this.model.attributes);
@@ -29,6 +35,7 @@ var DetailView = Backbone.View.extend({
     return this;
   },
 
+  //This will update the model when the save-button is clicked
   updateModel: function(){
 
     var that = this;
@@ -45,6 +52,7 @@ var DetailView = Backbone.View.extend({
     })
   },
 
+  // this will create photo with the new button
   createPhoto: function(){
 
     var photoInstance = new Photo();
