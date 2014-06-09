@@ -57,7 +57,6 @@ var DetailView = Backbone.View.extend({
 
   //This will update the model when the button is clicked
   addPhoto: function() {
-
     this.model.set({
       url: this.$el.find('.image-input').val(),
 
