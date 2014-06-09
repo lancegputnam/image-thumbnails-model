@@ -1,6 +1,6 @@
 "use strict";
 
-var detailView;
+var detailPhoto;
 
 var newCaption = new PhotoCollection();
 
@@ -10,7 +10,7 @@ getPhotos.fetch().done(function() {
 	getPhotos.each(function(photos) {
 		new ThumbnailView({model: photos});
 	});
-	detailView = new DetailView({model: getPhotos.first() });
+	detailPhoto = new DetailView({model: getPhotos.first() });
 });
 
 

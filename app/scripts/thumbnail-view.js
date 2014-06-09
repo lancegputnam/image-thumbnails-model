@@ -27,8 +27,9 @@ var ThumbnailView = Backbone.View.extend({
 
   showDetailView: function() {
 
-    detailPic.remove();
-    detailPic = new DetailView({model: this.model});
+    //detailPhoto is from the detailPhoto variable in main.js
+    detailPhoto.remove();
+    detailPhoto = new DetailView({model: this.model});
   },
 });
 
