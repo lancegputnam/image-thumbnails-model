@@ -43,17 +43,20 @@ body {
     cursor: pointer;
 }
 
+.url-image {
+    margin-top: 15px;
+}
+
 .detail-box img {
     width: 600px;
     height: 600px;
 }
 
+.caption {
+    text-align: center;
+}
 .caption-image {
     margin-top: 10px;
-}
-
-.url-image {
-    margin-top: 15px;
 }
 
 .input {

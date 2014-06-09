@@ -7,11 +7,6 @@ var Photo = Backbone.Model.extend({
 	defaults: {
 		caption: ''
 	},
-
-	initialize: function() {
-	    this.on('change', function(){
-	    });
-	},
 });
 
 var PhotoCollection = Backbone.Collection.extend({
