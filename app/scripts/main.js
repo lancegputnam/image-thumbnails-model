@@ -1,16 +1,32 @@
 "use strict";
 
-var showThumbnails = new PhotoCollection();
-var detailViewInstance;
+var detailView;
 
-	showThumbnails.fetch().done(function(){
-		showThumbnails.each(function(url){
+var newCaption = new PhotoCollection();
 
-			new ThumbnailView({model:url})
-		});
+var getPhotos = new PhotoCollection();
 
-		detailViewInstance = new DetailView ({ model: showThumbnails.first() })
+getPhotos.fetch().done(function() {
+	getPhotos.each(function(photos) {
+		new ThumbnailView({model: photos});
 	});
+	detailView = new DetailView({model: getPhotos.first() });
+});
+
+
+// "use strict";
+
+// var showThumbnails = new PhotoCollection();
+// var detailViewInstance;
+
+// 	showThumbnails.fetch().done(function(){
+// 		showThumbnails.each(function(url){
+
+// 			new ThumbnailView({model:url})
+// 		});
+
+// 		detailViewInstance = new DetailView ({ model: showThumbnails.first() })
+// 	});
 
 
 

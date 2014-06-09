@@ -14,44 +14,48 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
     </head>
     <body>
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+ 
+ 
 
-        <div class="left-container">
-            <div class="detail-container">
-                <img src="http://placehold.it/500x400" width="100%">
-                <input class="newPhoto" placeholder="Add New Photo to Library">
-                <input class="newCaption" placeholder="Add Caption to Photo">
-                <div class="save-button button">Save</div> 
-                <div class="new-button button">New</div> 
-            </div>
-        </div>
-        
-        <div class="right-container">
-            <div class="thumbnail-container"></div>
-        </div>
  
- 
-        <script type="text/template" class="thumbnail-template">
-            <img src="<%= url %>" width="175" height="175">
+        <div class="header"> Iron Yard Randomness </div>
+
+        <div class="thumbnail-container"></div>
+        <div class="main-container"></div>
+
+
+        <script type="text/template" class="thumbnail-images">
+            <div> <img src="<%= url %>"> </div>
         </script>
 
-        <script type="text/template" class="detail-view-template">
+
+        <script type="text/template" class="detail-images"> 
+
             <img src="<%= url %>">
-            <input class="url-input" value="<%= url %>" placeholder="Enter a url...">
-            <input class="caption-input" value="<%= caption %>" placeholder="Enter a caption...">
-            <div>
-                <div class="save-button">Save</div>
-                <div class="new-button">New</div>
+            <div class="caption"> "<%= caption ? caption: 'bro, write a caption' %>" </div>
+
+            <div class="url-image">
+                <input class="input image-input" placeholder="Insert Photo URL Here"> </input>
+                <button class="button new-image">SAVE</button>
             </div>
-            <div class="status"></div>
+
+            <div class="caption-image">
+                <input class='input caption-input' placeholder="Caption this photo"></input> 
+                <button class='button new-caption'>ADD</button>
+            </div>
+
         </script>
 
-        
+     
+
+
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
