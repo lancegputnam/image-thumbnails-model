@@ -4,29 +4,16 @@ var detailPhoto;
 
 var newCaption = new PhotoCollection();
 
-var getPhotos = new PhotoCollection();
+var showPhotos = new PhotoCollection();
 
-getPhotos.fetch().done(function() {
-	getPhotos.each(function(photos) {
+showPhotos.fetch().done(function() {
+	showPhotos.each(function(photos) {
 		new ThumbnailView({model: photos});
 	});
-	detailPhoto = new DetailView({model: getPhotos.first() });
+
+	//detailPhoto is from the variable above. DetailView is from detail-view.js
+	detailPhoto = new DetailView({model: showPhotos.first() });
 });
-
-
-// "use strict";
-
-// var showThumbnails = new PhotoCollection();
-// var detailViewInstance;
-
-// 	showThumbnails.fetch().done(function(){
-// 		showThumbnails.each(function(url){
-
-// 			new ThumbnailView({model:url})
-// 		});
-
-// 		detailViewInstance = new DetailView ({ model: showThumbnails.first() })
-// 	});
 
 
 

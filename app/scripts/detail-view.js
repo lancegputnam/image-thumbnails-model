@@ -19,7 +19,8 @@ var DetailView = Backbone.View.extend({
   // This initialize is appending to the main-container. it is then being rendered. 
   initialize: function() {
   // .listenTo is binded to models and collections
-  this.listenTo(getPhotos, 'add', function(photo){
+  // showPhotos is from the variable in main.js
+  this.listenTo(showPhotos, 'add', function(photo){
       new ThumbnailView({model: photo});
     });
 
@@ -39,12 +40,14 @@ var DetailView = Backbone.View.extend({
   },
 
   //This will update the model when the button is clicked
+  // addCaption and addPhoto are basically doing the same thing
   addCaption: function() {
     this.model.set({
       caption: this.$el.find('.caption-input').val(),
     });
 
-    getPhotos.add(this.model);
+    //showPhotos is from the variable in main.js
+    showPhotos.add(this.model);
 
     this.model.save().done(function() {
       this.$el.find('.status').html('Saved!');
@@ -60,7 +63,8 @@ var DetailView = Backbone.View.extend({
 
     });
 
-    getPhotos.add(this.model);
+    //showPhotos is from the variable in main.js
+    showPhotos.add(this.model);
 
     this.model.save().done(function() {
       this.$el.find('.status').html('Saved!');
