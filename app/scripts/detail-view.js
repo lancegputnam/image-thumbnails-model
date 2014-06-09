@@ -12,7 +12,7 @@ var DetailView = Backbone.View.extend({
   // click to the new button and it adds the photo to the gallery
   //.new-image and .new-caption are being referenced from the scripts in index.html
   events: {
-    "click .new-image" : "addImage",
+    "click .new-image" : "saveImage",
     "click .new-caption" : "addCaption",
   },
 
@@ -56,7 +56,7 @@ var DetailView = Backbone.View.extend({
   },
 
   //This will update the model when the button is clicked
-  addPhoto: function() {
+  saveImage: function() {
     this.model.set({
       url: this.$el.find('.image-input').val(),
 
