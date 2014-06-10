@@ -22,10 +22,27 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
  
+   <!--  <nav>
+            <ul>
+                <li><a href="/#users">Users List</a></li>
+                <ul>
+                    <li><a href="/#users/mason">Mason</a></li>
+                    <li><a href="/#users/George">George</a></li>
+                </ul>
+                <li><a href="/#">Home</a></li>
+            </ul>
+        </nav>
+ 
+ 
+        <div class="container"> </div> -->
  
 
         <div class= "container">
             <div class="header"> Cause I'm a 90's Kid </div>
+              <div class="top-container">
+                    <a href="/#">Home</a>
+                    <a href="/#">Favorite</a>
+                </div>
             <div class="thumbnail-container"></div>
             <div class="main-container"></div>
         </div>
@@ -36,22 +53,20 @@
         </script>
 
 
-        <script type="text/template" class="detail-images"> 
+        <script type="text/template" class="detail-images">
 
-            <img src="<%= url %>">
+            <img src="<%= url %>" class="edit-image">
             <div class="caption"> <%= caption %> </div>
-
             <div class="url-image">
-                <input class="input image-input" placeholder="Insert Photo URL Here"> </input>
-                <button class="button new-image">SAVE</button>
+                <input class="input image-input" placeholder="Insert Photo URL Here"></input>
+                <button class="button new-image">PLACE</button>
             </div>
-
             <div class="caption-image">
                 <input class='input caption-input' placeholder="Caption this photo"></input> 
                 <button class='button new-caption'>ADD</button>
             </div>
 
-        </script>
+        </script>\
 
      
 
@@ -79,6 +94,7 @@
         <script src="scripts/image-model.js"></script>
         <script src="scripts/thumbnail-view.js"></script>
         <script src="scripts/detail-view.js"></script>
+        <script src="scripts/router.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

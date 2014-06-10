@@ -13,7 +13,6 @@ var ThumbnailView = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.listenTo(this.model, 'change', this.render);
     // this thumbnail container is from the HTML. 
     $('.thumbnail-container').append(this.el);
     this.render();
@@ -23,7 +22,7 @@ var ThumbnailView = Backbone.View.extend({
     // This is the render function. The renderedTemplate becomes a template
     var renderTemp = this.template(this.model.attributes);
     this.$el.html(renderTemp);
-    return this;
+    // return this;
   },
 
   showDetailView: function() {

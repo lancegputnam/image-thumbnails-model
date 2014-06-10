@@ -20,15 +20,15 @@ var DetailView = Backbone.View.extend({
   initialize: function() {
   // .listenTo is binded to models and collections
   // showPhotos is from the variable in main.js
-  this.listenTo(showPhotos, 'add', function(photo){
+    this.listenTo(showPhotos, 'add', function(photo){
       new ThumbnailView({model: photo});
     });
 
     this.listenTo(this.model, 'change', this.render);
 
   // this main-container is being pulled from the HTML 
-  $('.main-container').prepend(this.el);
-  this.render();
+    $('.main-container').append(this.el);
+    this.render();
 
   },
 
@@ -57,16 +57,18 @@ var DetailView = Backbone.View.extend({
 
   //This will update the model when the button is clicked
   saveImage: function() {
-    this.model.set({
-      url: this.$el.find('.image-input').val(),
+    
+    var that = this;
 
+    this.model.set({
+      url:      this.$el.find('.image-input').val(),
+      caption:  this.$el.find('.caption-input').val()
     });
 
-    //showPhotos is from the variable in main.js
-    showPhotos.add(this.model);
+    showPhotos.add(this.model)
 
-    this.model.save().done(function() {
-      this.$el.find('.status').html('Saved!');
+    this.model.save().done(function(){
+      that.$el.find('.status').html('Saved!');
     });
   },
 });
