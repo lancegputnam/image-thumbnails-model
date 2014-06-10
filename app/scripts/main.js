@@ -4,8 +4,11 @@ var showPhotos = new PhotoCollection();
 var detailPhoto;
 
 showPhotos.fetch().done(function() {
-	showPhotos.each(function(photos) {
+	
+	// var app = new AppRouter ();
+	Backbone.history.start();
 
+	showPhotos.each(function(photos) {
 		new ThumbnailView({model: photos});
 	});
 
@@ -13,8 +16,9 @@ showPhotos.fetch().done(function() {
 	detailPhoto = new DetailView({model: showPhotos.first() });
 });
 
-var app = new AppRouter ();
-Backbone.history.start();
+
+
+
 
 
 

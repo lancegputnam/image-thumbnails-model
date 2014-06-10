@@ -14,12 +14,18 @@ var DetailView = Backbone.View.extend({
   events: {
     "click .new-image" : "saveImage",
     "click .new-caption" : "addCaption",
+    "click .new-product" : "addProduct",
+    // "click .save-produt" : "saveImage",
+
   },
 
   // This initialize is appending to the main-container. it is then being rendered. 
   initialize: function() {
   // .listenTo is binded to models and collections
   // showPhotos is from the variable in main.js
+  // this view depends on knowing about the photos collection
+
+
     this.listenTo(showPhotos, 'add', function(photo){
       new ThumbnailView({model: photo});
     });
@@ -71,4 +77,12 @@ var DetailView = Backbone.View.extend({
       that.$el.find('.status').html('Saved!');
     });
   },
+
+  addProduct: function(){
+  // want to create a blank default DetailView with an empty model to be set and saved
+  // the view had no model so we had to create one 
+  var newProduct = new Photo()
+  new DetailView({model: newProduct})
+  },
+
 });

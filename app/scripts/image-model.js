@@ -6,6 +6,7 @@ var Photo = Backbone.Model.extend({
 	idAttribute: "_id",
 	defaults: {
 		caption: 'You are a 90s kid',
+		url: "http://placehold.it/300x300"
 	},
 });
 
